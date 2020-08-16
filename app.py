@@ -40,17 +40,19 @@ def forecast():
     file_url = None
     res = None
     if request.method == 'GET':
+        # placeholder to check if any region was having fire on the current date previous years.
         return render_template('forecast.html', form=form, file_url=file_url, res=res)
     if request.method == 'POST':
         if form.validate_on_submit():
             filename = photos.save(form.image.data)
             file_url = photos.url(filename)
+            # placeholder to identify if the uploaded image is of a fire
             name = request.form.get('name')
             region = request.form.get('region')
             phone = request.form.get('phone')
             # Your Account Sid and Auth Token from twilio.com / console 
-            account_sid = 'AC3e1c5c88c582d4b5cffaab725161ad46'
-            auth_token = 'f700a97a92d5051c58e77372f33daa92'
+            account_sid = '<Your Account id>'
+            auth_token = '<Your token>'
             
             client = Client(account_sid, auth_token) 
             try:
