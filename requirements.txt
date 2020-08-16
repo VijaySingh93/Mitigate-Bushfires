@@ -1,0 +1,13 @@
+Flask==1.1.2
+flask-paginate==0.7.0
+Flask-Uploads==0.2.1
+Flask-WTF==0.14.3
+Jinja2==2.11.2
+six==1.15.0
+sqlparse==0.3.0
+urllib3==1.25.8
+websockets==8.1
+Werkzeug==0.16.1
+wrapt==1.11.2
+WTForms==2.3.3
+twilio==6.44.2

@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="w3l-service-breadcrum">
+  <div class="breadcrum-bg py-sm-5 py-4">
+    <div class="container py-lg-3">
+      <h2>BushFire Reporting and Prediction</h2>
+      <p><a href="{{url_for('home')}}">Home</a> &nbsp; / &nbsp; Forecast</p>
+    </div>
+  </div>
+</section>
+<br>
+<hr>
+<br>
+<section class="w3l-features-8">
+<p class="form-group"> 
+         <center><strong>Fire History Alert! People in MALLEE, WIMMERA areas.
+          Please be vigilant as last year you had bush fires during these days.</strong></center>
+   </p>
+<p class="form-group"> 
+         <center>If you want to report any incident around your area, please fill the details below:</center>
+   </p>
+<br>
+<form method = "POST" enctype="multipart/form-data" action = "">
+   {{ form.hidden_tag()}}
+    <fieldset class="form-group">
+      <div class="form-group">
+          <center>
+         {{form.name(class="container form-control", placeholder="Please enter your Name")}}</center>
+      </div>
+   </fieldset>
+    <fieldset class="form-group">
+      <div class="form-group">
+          <center>
+         {{form.region(class="container form-control", placeholder="Enter Region")}}</center>
+      </div>
+   </fieldset>
+   <fieldset class="form-group">
+      <div class="form-group">
+          <center>
+         {{form.phone(class="container form-control", placeholder="Enter phone")}}</center>
+      </div>
+   </fieldset>
+   <fieldset class="form-group">
+      <div class="form-group">
+          <center>
+         {{form.image(class="container form-control", placeholder="Select Image")}}</center>
+      </div>
+   </fieldset>
+   <div class="form-group"> 
+         <center>{{form.submit(class="btn btn-outline-info btn-sm")}}</center>
+   </div>
+</form>
+</section>
+<br>
+<br>
+{% if res %}
+<p class="form-group"> 
+         <center>{{res}}</center>
+   </p>
+<br><br>
+{% endif %}
+{% if file_url %}
+<br>
+<center><img src="{{ file_url }}" width="700" height="400"></center>
+<br><br><br>
+{% endif %}
+<div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d144.7852!3d-37.4713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1569921526194!5m2!1sen!2sin"
+                frameborder="0" style="border:0;height:400px;width:100%;display:block;" allowfullscreen=""></iframe>
+        </div>
+{% endblock %}
