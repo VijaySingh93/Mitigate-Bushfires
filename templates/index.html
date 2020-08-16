@@ -64,10 +64,14 @@ Author URL: http://w3layouts.com
             <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
           </li>
         </ul>
-        <form action="https://www.google.com" class="form-inline position-relative my-2 my-lg-0">
-          <input class="form-control search" type="search" placeholder="Search here..." aria-label="Search" required="">
-          <button class="btn btn-search position-absolute" type="submit"><span class="fa fa-search" aria-hidden="true"></span></button>
-        </form>
+            <select id="language" name="language" placeholder="Search here..."> 
+            <option value="english" selected>English</option> 
+            <option value="mandarin">Mandarin</option> 
+            <option value="german">German</option> 
+            <option value="french">French</option> 
+        </select> 
+<!-- <input class="form-control search" type="search" placeholder="Search here..." aria-label="Search" required=""> 
+<button class="btn btn-search position-absolute" type="submit"><span class="fa fa-search" aria-hidden="true"></span></button>-->
       </div>
     </div>
   </nav>
