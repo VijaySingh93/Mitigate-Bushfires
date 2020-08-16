@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, flash, redirect, url_for, request
 from twilio.rest import Client 
 from forms import report
+import datetime
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 
 app = Flask(__name__)
@@ -40,6 +41,8 @@ def forecast():
     file_url = None
     res = None
     if request.method == 'GET':
+        historical_data = pd.read_csv('tfb-history.csv', skiprows=1)
+        areas_with_fire = historical_data[historical_data['Declared date and time'] == str(datetime.date.today())]['Declared district(s)']
         # placeholder to check if any region was having fire on the current date previous years.
         return render_template('forecast.html', form=form, file_url=file_url, res=res)
     if request.method == 'POST':
