@@ -54,18 +54,18 @@ def forecast():
             
             client = Client(account_sid, auth_token) 
             try:
-                # message1 = client.messages.create( 
-                #                             from_='+16084715116', 
-                #                             body ='{} has reported an incident in the region of {}. It has 78% probability of a bushfire'.format(name,region), 
-                #                             to = phone
-                #                         )
-                # message2 = client.messages.create( 
-                #                             from_='+16084715116', 
-                #                             body ='Fire History Alert! People in MALLEE, WIMMERA areas. Please be vigilant as last year you had bush fires during these days.', 
-                #                             to = phone
-                #                         )
-                # print(message1.sid)                         
-                # print(message2.sid)
+                message1 = client.messages.create( 
+                                            from_='+16084715116', 
+                                            body ='{} has reported an incident in the region of {}. It has 78% probability of a bushfire'.format(name,region), 
+                                            to = '+61408695029'
+                                        )
+                message2 = client.messages.create( 
+                                            from_='+16084715116', 
+                                            body ='Fire History Alert! People in MALLEE, WIMMERA areas. Please be vigilant as last year you had bush fires during these days.', 
+                                            to = phone
+                                        )
+                print(message1.sid)                         
+                print(message2.sid)
                 res = 'Thank You for the details! The concerned authorities have been notified'
             except Exception as e:
                 res = 'SMS Alert failed with error:{}'.format(e) 
