@@ -62,7 +62,7 @@ def forecast():
                 message2 = client.messages.create( 
                                             from_='+16084715116', 
                                             body ='Fire History Alert! People in MALLEE, WIMMERA areas. Please be vigilant as last year you had bush fires during these days.', 
-                                            to = phone
+                                            to = '+61408695029'
                                         )
                 print(message1.sid)                         
                 print(message2.sid)
